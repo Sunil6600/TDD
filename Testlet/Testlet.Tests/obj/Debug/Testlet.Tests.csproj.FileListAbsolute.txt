@@ -1,0 +1,7 @@
+c:\users\sunny\documents\visual studio 2013\Projects\Testlet\Testlet.Tests\bin\Debug\Testlet.Tests.dll
+c:\users\sunny\documents\visual studio 2013\Projects\Testlet\Testlet.Tests\bin\Debug\Testlet.Tests.pdb
+c:\users\sunny\documents\visual studio 2013\Projects\Testlet\Testlet.Tests\bin\Debug\Testlet.Lib.dll
+c:\users\sunny\documents\visual studio 2013\Projects\Testlet\Testlet.Tests\bin\Debug\Testlet.Lib.pdb
+c:\users\sunny\documents\visual studio 2013\Projects\Testlet\Testlet.Tests\obj\Debug\Testlet.Tests.csprojResolveAssemblyReference.cache
+c:\users\sunny\documents\visual studio 2013\Projects\Testlet\Testlet.Tests\obj\Debug\Testlet.Tests.dll
+c:\users\sunny\documents\visual studio 2013\Projects\Testlet\Testlet.Tests\obj\Debug\Testlet.Tests.pdb
