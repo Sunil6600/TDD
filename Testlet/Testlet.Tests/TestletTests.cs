@@ -37,9 +37,10 @@ namespace Testlet.Tests
 
             Assert.IsNotNull(items, "Items result is null");
             Assert.AreEqual(10, items.Count);
-            Assert.AreEqual(4, items.Take(4).Where(x => x.ItemType == ItemTypeEnum.Pretest).ToList().Count);
+            Assert.AreEqual(2, items.Take(2).Where(x => x.ItemType == ItemTypeEnum.Pretest).ToList().Count);
             items.Reverse();
-            Assert.AreEqual(6, items.Take(6).Where(x => x.ItemType == ItemTypeEnum.Operational).ToList().Count);
+            Assert.IsTrue(items.Take(8).Where(x => x.ItemType == ItemTypeEnum.Pretest).ToList().Count > 1, "There is no pretest in mix");
+            Assert.IsTrue(items.Take(8).Where(x => x.ItemType == ItemTypeEnum.Operational).ToList().Count > 1, "There is no operational in mix");
         }
     }
 }
