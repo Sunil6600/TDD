@@ -17,25 +17,30 @@ namespace Testlet.Lib
 
         public List<Item> Randomize()
         {
-            List<Item> randomList = new List<Item>();
-            var preTest = Items.Where(x => x.ItemType == ItemTypeEnum.Pretest).ToList();
-            var operational = Items.Where(x => x.ItemType == ItemTypeEnum.Operational).ToList();
+            var randomList = new List<Item>();
 
-            Random r = new Random();
-            int randomIndex = 0;
-            while (preTest.Count > 0)
+            var tempItems = Items.Select(x => x).ToList();
+            var preTest = Items.Where(x => x.ItemType == ItemTypeEnum.Pretest).ToList();
+
+            var r = new Random();
+            int randomIndex;
+
+            for (var i = 0; i < 2; i++)
             {
                 randomIndex = r.Next(0, preTest.Count); //Choose a random object in the list
                 randomList.Add(preTest[randomIndex]); //add it to the new, random list
+                tempItems.Remove(preTest[randomIndex]); //remove from unfiltered list also
                 preTest.RemoveAt(randomIndex); //remove to avoid duplicates
             }
-            randomIndex = 0;
-            while (operational.Count > 0)
-            {
-                randomIndex = r.Next(0, operational.Count); //Choose a random object in the list
-                randomList.Add(operational[randomIndex]); //add it to the new, random list
-                operational.RemoveAt(randomIndex); //remove to avoid duplicates
-            }
+
+            while (tempItems.Count > 0)
+                for (var i = 0; i < tempItems.Count; i++)
+                {
+                    randomIndex = r.Next(0, tempItems.Count); //Choose a random object in the list
+                    randomList.Add(tempItems[randomIndex]); //add it to the new, random list
+                    tempItems.RemoveAt(randomIndex); //remove to avoid duplicates
+                }
+
             return randomList;
         }
     }
