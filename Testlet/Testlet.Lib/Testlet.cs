@@ -33,13 +33,12 @@ namespace Testlet.Lib
                 preTest.RemoveAt(randomIndex); //remove to avoid duplicates
             }
 
-            while (tempItems.Count > 0)
-                for (var i = 0; i < tempItems.Count; i++)
-                {
-                    randomIndex = r.Next(0, tempItems.Count); //Choose a random object in the list
-                    randomList.Add(tempItems[randomIndex]); //add it to the new, random list
-                    tempItems.RemoveAt(randomIndex); //remove to avoid duplicates
-                }
+            while (tempItems.Count > 0)                
+            {
+                randomIndex = r.Next(0, tempItems.Count); //Choose a random object in the list
+                randomList.Add(tempItems[randomIndex]); //add it to the new, random list
+                tempItems.RemoveAt(randomIndex); //remove to avoid duplicates
+            }
 
             return randomList;
         }
